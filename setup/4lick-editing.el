@@ -116,6 +116,7 @@
   (volatile-highlights-mode t)
   :diminish volatile-highlights-mode)
 
+(require 'move-text)
 
 ;; https://github.com/Kungsgeten/selected.el
 (use-package selected
@@ -125,6 +126,8 @@
               ("u" . upcase-region)
               ("d" . downcase-region)
               ("w" . count-words-region)
+              ("C-n" . move-text-up)
+	      ("C-p" . move-text-down)	      	      
               ("m" . apply-macro-to-region-lines)))
 
 (provide '4lick-editing)
