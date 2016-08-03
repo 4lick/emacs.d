@@ -38,6 +38,8 @@
 ;; lang
 (load-file (concat dotfiles-dir "setup/4lick-json.el"))
 (load-file (concat dotfiles-dir "setup/4lick-elm.el"))
+(load-file (concat dotfiles-dir "setup/4lick-haskell.el"))
+;;(load-file (concat dotfiles-dir "setup/4lick-clojure-reload.el"))
 ;;(load-file (concat dotfiles-dir "setup/4lick-clojure.el"))
 
 ;; web
@@ -45,7 +47,6 @@
 ;;(load-file (concat dotfiles-dir "setup/4lick-html.el"))
 ;;(load-file (concat dotfiles-dir "setup/4lick-javascript.el"))
 ;;(load-file (concat dotfiles-dir "setup/4lick-js-web-mode.el"))
-
 
 ;; Functions (load all files in defuns-dir)
 (setq defuns-dir (concat dotfiles-dir "defuns"))

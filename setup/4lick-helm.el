@@ -4,6 +4,19 @@
   :config
   (require 'helm-config)
   (require 'helm)
+
+  ;; ag
+  (use-package helm-ag
+    :ensure    helm-ag
+    :bind      ("C-c a" . helm-ag))
+
+  ;; swoop
+  (use-package helm-swoop
+    :ensure    helm-swoop
+    :bind      (("C-c o" . helm-swoop) ;;("C-x c s" . helm-swoop)
+                      ("C-c M-o" . helm-multi-swoop)))  
+
+  
   ;; Activate Helm.
   (helm-mode 1)
   (with-eval-after-load "4lick-project"
@@ -35,12 +48,14 @@
   :bind (("M-x" . helm-M-x)
          ("C-x C-f" . helm-find-files)
          ("C-x C-g" . helm-do-grep)
-         ;;("C-x b" . helm-buffers-list) ;; use ido-virtual-buffers
-	 ("C-x b" . helm-mini) ;; uses recentf
-         ("C-x c g" . helm-google-suggest)
+	 ("C-x b"   . helm-mini) ;; uses recentf
          ("C-t" . helm-imenu)
+	 ("C-h a"   . helm-apropos)
+         ("C-x p"   .   helm-top)
 	 ("C-c h o" . helm-occur)
-         ("M-y" . helm-show-kill-ring)))
+         ("M-y"     . helm-show-kill-ring)))
+         ;;("C-x b" . helm-buffers-list) ;; use ido-virtual-buffers
+         ;;("C-x c g" . helm-google-suggest)
 
 ;; Enrich isearch with Helm using the `C-S-s' binding.
 ;; swiper-helm behaves subtly different from isearch, so let's not

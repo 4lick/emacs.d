@@ -51,6 +51,19 @@
         ("C-M-%" . anzu-query-replace-regexp))
   :diminish anzu-mode)
 
+;; Switch buffer : Alt + Tab
+(use-package iflipb
+  :bind (
+         ( "C-<" . iflipb-next-buffer) 
+         ( "C->" . iflipb-previous-buffer))
+  :init (progn (setq iflipb-wrap-around t))
+  :ensure t)
 
+;; Guide-key 
+(use-package guide-key
+  :init (progn
+          (setq guide-key/guide-key-sequence '("C-c" "C-c ESC" "C-c /" "C-c n" "C-c x" "C-x"  "C-x r" "C-x 4" "<f2>" "C-c p"))
+          (guide-key-mode 1))
+  :ensure t)
 
 (provide '4lick-navigation)
