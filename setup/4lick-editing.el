@@ -130,4 +130,11 @@
 	      ("C-p" . move-text-down)	      	      
               ("m" . apply-macro-to-region-lines)))
 
+;; Allow pasting selection outside of Emacs
+(setq x-select-enable-clipboard t)
+
+(bind-key "<RET>" 'newline-and-indent)
+(bind-key "<C-return>" 'newline)
+(bind-key "<pause>" 'kill-this-buffer)
+
 (provide '4lick-editing)

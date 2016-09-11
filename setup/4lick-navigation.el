@@ -52,5 +52,36 @@
   :diminish anzu-mode)
 
 
+;; Alt + Tab
+(use-package iflipb
+  :bind (
+         ( "C-<" . iflipb-next-buffer) 
+         ( "C->" . iflipb-previous-buffer))
+  :init (progn (setq iflipb-wrap-around t))
+  :ensure t)
+
+;; Guide-key 
+(use-package guide-key
+  :init (progn
+          (setq guide-key/guide-key-sequence '("C-c" "C-c ESC" "C-c /" "C-c n" "C-c x" "C-x"  "C-x r" "C-x 4" "<f2>" "C-c p"))
+          (guide-key-mode 1))
+  :ensure t)
+
+;; frame move
+(use-package framemove
+  :config (progn
+            (windmove-default-keybindings)
+            (setq framemove-hook-into-windmove t))
+  :ensure t)
+
+;; ;; key-chord
+;; (use-package key-chord
+;;   :bind ("C-c n k" . key-chord-mode)
+;;   :init (key-chord-mode 1)
+;;   :config
+;;   (progn
+;;     (key-chord-define-global "q0" 'delete-window)
+;;     (key-chord-define-global "JJ" 'ace-jump-char-mode))
+;;   :ensure t)
 
 (provide '4lick-navigation)

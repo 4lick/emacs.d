@@ -23,6 +23,7 @@
 (require '4lick-ui)
 (require '4lick-theme)
 
+
 ;; customizations
 (load-file (concat dotfiles-dir "setup/4lick-editing.el"))
 (load-file (concat dotfiles-dir "setup/4lick-navigation.el"))
@@ -45,6 +46,15 @@
 ;;(load-file (concat dotfiles-dir "setup/4lick-html.el"))
 ;;(load-file (concat dotfiles-dir "setup/4lick-javascript.el"))
 ;;(load-file (concat dotfiles-dir "setup/4lick-js-web-mode.el"))
+
+;; divers
+;; neotree
+(use-package neotree
+  :commands neotree-toggle
+  :bind ("<f8>" . neotree-toggle))
+
+;; restclient
+(use-package restclient)
 
 
 ;; Functions (load all files in defuns-dir)
@@ -81,10 +91,11 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (flycheck-elm flycheck-elm-setup elm-mode f use-package paradox))))
+    (paredit helm-swoop helm-ag iflipb flycheck-elm flycheck-elm-setup elm-mode f use-package paradox))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(put 'downcase-region 'disabled nil)
