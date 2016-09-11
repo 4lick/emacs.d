@@ -84,4 +84,10 @@
 ;;     (key-chord-define-global "JJ" 'ace-jump-char-mode))
 ;;   :ensure t)
 
+;; neotree
+(use-package neotree
+  :commands neotree-toggle
+  :bind ("<f8>" . neotree-toggle))
+
+
 (provide '4lick-navigation)

@@ -39,6 +39,8 @@
 ;; lang
 (load-file (concat dotfiles-dir "setup/4lick-json.el"))
 (load-file (concat dotfiles-dir "setup/4lick-elm.el"))
+(load-file (concat dotfiles-dir "setup/4lick-haskell.el"))
+(load-file (concat dotfiles-dir "setup/4lick-clojure-reload.el"))
 ;;(load-file (concat dotfiles-dir "setup/4lick-clojure.el"))
 
 ;; web
@@ -69,11 +71,15 @@
   (server-start))
 
 ;; Mac OS X
-(setq default-input-method "MacOSX")
-(setq mac-command-modifier 'meta
-      mac-option-modifier nil
-      mac-allow-anti-aliasing t
-      mac-command-key-is-meta t)
+(defconst *is-a-mac* (eq system-type 'darwin))
+(when *is-a-mac*
+  (setq default-input-method "MacOSX")
+  (setq mac-command-modifier 'meta
+        mac-option-modifier nil
+        mac-allow-anti-aliasing t
+        mac-command-key-is-meta t)
+  (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+  (setq exec-path (append exec-path '("/usr/local/opt/lein"))))
 ;;(defconst *is-a-mac* (eq system-type 'darwin))
 ;;(when *is-a-mac*
 ;;  (setq default-input-method "MacOSX")
