@@ -66,4 +66,9 @@
           (guide-key-mode 1))
   :ensure t)
 
+;; neotree
+(use-package neotree
+  :commands neotree-toggle
+  :bind ("<f8>" . neotree-toggle))
+
 (provide '4lick-navigation)

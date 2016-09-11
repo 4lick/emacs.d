@@ -5,7 +5,7 @@
   (add-hook
    'clojure-mode-hook
    (lambda ()
-     (paredit-mode 1)
+     ;;(paredit-mode 1)
      (clj-refactor-mode 1)
      ;; We'll be using Monroe, a simple nREPL client. To use it, you'll need
      ;; to start an nREPL somewhere (running `lein repl' in your project should
