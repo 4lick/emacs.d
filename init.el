@@ -18,8 +18,8 @@
 (add-to-list 'load-path (concat dotfiles-dir "setup"))
 
 ;; Load the 4lick Emacs fundamentals.
-(require '4lick-lib)
 (require '4lick-package)
+(require '4lick-lib)
 (require '4lick-ui)
 (require '4lick-theme)
 
@@ -36,7 +36,7 @@
 (load-file (concat dotfiles-dir "setup/4lick-markdown.el"))
 
 ;; lang
-(load-file (concat dotfiles-dir "setup/4lick-json.el"))
+(load-file (concat dotfiles-dir "setup/4lick-format.el"))
 (load-file (concat dotfiles-dir "setup/4lick-elm.el"))
 (load-file (concat dotfiles-dir "setup/4lick-haskell.el"))
 (load-file (concat dotfiles-dir "setup/4lick-clojure-reload.el"))
@@ -48,8 +48,8 @@
 ;;(load-file (concat dotfiles-dir "setup/4lick-javascript.el"))
 ;;(load-file (concat dotfiles-dir "setup/4lick-js-web-mode.el"))
 
-;; restclient
-(use-package restclient)
+;; tools
+(load-file (concat dotfiles-dir "setup/4lick-tools.el"))
 
 ;; Functions (load all files in defuns-dir)
 (setq defuns-dir (concat dotfiles-dir "defuns"))
@@ -82,17 +82,17 @@
 
 ;; End int.el
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (flycheck-elm flycheck-elm-setup elm-mode f use-package paradox))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+;;(custom-set-variables
+;; ;; custom-set-variables was added by Custom.
+;; ;; If you edit it by hand, you could mess it up, so be careful.
+;; ;; Your init file should contain only one such instance.
+;; ;; If there is more than one, they won't work right.
+;; '(package-selected-packages
+;;   (quote
+;;    (flycheck-elm flycheck-elm-setup elm-mode f use-package paradox))))
+;;(custom-set-faces
+;; ;; custom-set-faces was added by Custom.
+;; ;; If you edit it by hand, you could mess it up, so be careful.
+;; ;; Your init file should contain only one such instance.
+;; ;; If there is more than one, they won't work right.
+;; )
