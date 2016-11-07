@@ -51,7 +51,8 @@
         ("C-M-%" . anzu-query-replace-regexp))
   :diminish anzu-mode)
 
-;; Switch buffer : Alt + Tab
+
+;; Alt + Tab
 (use-package iflipb
   :bind (
          ( "C-<" . iflipb-next-buffer) 
@@ -66,9 +67,27 @@
           (guide-key-mode 1))
   :ensure t)
 
+;; frame move
+(use-package framemove
+  :config (progn
+            (windmove-default-keybindings)
+            (setq framemove-hook-into-windmove t))
+  :ensure t)
+
+;; ;; key-chord
+;; (use-package key-chord
+;;   :bind ("C-c n k" . key-chord-mode)
+;;   :init (key-chord-mode 1)
+;;   :config
+;;   (progn
+;;     (key-chord-define-global "q0" 'delete-window)
+;;     (key-chord-define-global "JJ" 'ace-jump-char-mode))
+;;   :ensure t)
+
 ;; neotree
 (use-package neotree
   :commands neotree-toggle
   :bind ("<f8>" . neotree-toggle))
+
 
 (provide '4lick-navigation)

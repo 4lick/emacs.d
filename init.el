@@ -23,6 +23,7 @@
 (require '4lick-ui)
 (require '4lick-theme)
 
+
 ;; customizations
 (load-file (concat dotfiles-dir "setup/4lick-editing.el"))
 (load-file (concat dotfiles-dir "setup/4lick-navigation.el"))
@@ -50,6 +51,12 @@
 
 ;; tools
 (load-file (concat dotfiles-dir "setup/4lick-tools.el"))
+
+;; divers
+;; neotree
+(use-package neotree
+  :commands neotree-toggle
+  :bind ("<f8>" . neotree-toggle))
 
 ;; Functions (load all files in defuns-dir)
 (setq defuns-dir (concat dotfiles-dir "defuns"))
@@ -82,17 +89,18 @@
 
 ;; End int.el
 
-;;(custom-set-variables
-;; ;; custom-set-variables was added by Custom.
-;; ;; If you edit it by hand, you could mess it up, so be careful.
-;; ;; Your init file should contain only one such instance.
-;; ;; If there is more than one, they won't work right.
-;; '(package-selected-packages
-;;   (quote
-;;    (flycheck-elm flycheck-elm-setup elm-mode f use-package paradox))))
-;;(custom-set-faces
-;; ;; custom-set-faces was added by Custom.
-;; ;; If you edit it by hand, you could mess it up, so be careful.
-;; ;; Your init file should contain only one such instance.
-;; ;; If there is more than one, they won't work right.
-;; )
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (paredit helm-swoop helm-ag iflipb flycheck-elm flycheck-elm-setup elm-mode f use-package paradox))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+(put 'downcase-region 'disabled nil)

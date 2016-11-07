@@ -13,6 +13,7 @@
   :config
   (projectile-global-mode)
   ;; Use C-c C-f to find a file anywhere in the current project.
-  :bind ("C-c C-f" . projectile-find-file))
+  :bind (("C-c C-f" . projectile-find-file))
+         ("<f1>"    . projectile-switch-project))
 
 (provide '4lick-project)

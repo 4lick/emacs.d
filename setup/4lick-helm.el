@@ -4,6 +4,37 @@
   :config
   (require 'helm-config)
   (require 'helm)
+  ;;(setq helm-ff-transformer-show-only-basename nil
+  ;;      ;;helm-adaptive-history-file             ers-helm-adaptive-history-file
+  ;;      helm-boring-file-regexp-list           '("\\.git$" "\\.svn$" "\\.elc$")
+  ;;      helm-yank-symbol-first                 t
+  ;;      helm-buffers-fuzzy-matching            t
+  ;;      helm-ff-auto-update-initial-value      t
+  ;;      helm-input-idle-delay                  0.1
+  ;;      helm-idle-delay                        0.1)
+  ;;
+  ;;:init (progn
+  ;;      (require 'helm-config)
+  ;;      (helm-mode t)
+  ;;      ;;(helm-adaptative-mode t)
+  ;;
+        (use-package helm-ag
+          :ensure    helm-ag
+          :bind      ("C-c a" . helm-ag))
+  ;;
+  ;;      (use-package helm-descbinds
+  ;;        :ensure    helm-descbinds
+  ;;        :bind      ("C-h b"   . helm-descbinds))
+  ;;
+  ;;      (add-hook 'eshell-mode-hook
+  ;;                #'(lambda ()
+  ;;                    (bind-key "M-p" 'helm-eshell-history eshell-mode-map)))
+  ;;
+        (use-package helm-swoop
+          :ensure    helm-swoop
+          :bind      (("C-x c s" . helm-swoop) ;;("C-x c s" . helm-swoop)
+		      ))
+
 
   ;; ag
   (use-package helm-ag
@@ -14,9 +45,8 @@
   (use-package helm-swoop
     :ensure    helm-swoop
     :bind      (("C-c o" . helm-swoop) ;;("C-x c s" . helm-swoop)
-                      ("C-c M-o" . helm-multi-swoop)))  
+                      ("C-c M-o" . helm-multi-swoop)))
 
-  
   ;; Activate Helm.
   (helm-mode 1)
   (with-eval-after-load "4lick-project"
@@ -40,22 +70,34 @@
   (set-face-attribute 'helm-source-header nil :height 0.75)
 
   ;; custum style
-  (set-face-attribute 'helm-selection nil 
+  (set-face-attribute 'helm-selection nil
                       :background "orange"
                       :foreground "black")
-    
+
   ;; Replace common selectors with Helm versions.
   :bind (("M-x" . helm-M-x)
          ("C-x C-f" . helm-find-files)
          ("C-x C-g" . helm-do-grep)
-	 ("C-x b"   . helm-mini) ;; uses recentf
+         ;;("C-x b" . helm-buffers-list) ;; use ido-virtual-buffers
+	       ("C-x b"   . helm-mini) ;; uses recentf
+         ;;("C-x c g" . helm-google-suggest)
+         ("C-t"     . helm-imenu)
+	       ("C-c h o" . helm-occur)
+         ("M-y"     . helm-show-kill-ring))
+         ;;("C-x r l" . helm-bookmarks)
+         ;;("C-x C-m" . helm-M-x)
+         ;;("C-h a"   . helm-apropos)
+         ;;("C-x p" .   helm-top)
+         ;;("C-x C-b" . helm-buffers-list)
+      	 ("C-x b"   . helm-mini) ;; uses recentf
          ("C-t" . helm-imenu)
-	 ("C-h a"   . helm-apropos)
+      	 ("C-h a"   . helm-apropos)
          ("C-x p"   .   helm-top)
-	 ("C-c h o" . helm-occur)
-         ("M-y"     . helm-show-kill-ring)))
+      	 ;;("C-c h o" . helm-occur)
+         ("M-y"     . helm-show-kill-ring))
          ;;("C-x b" . helm-buffers-list) ;; use ido-virtual-buffers
          ;;("C-x c g" . helm-google-suggest)
+
 
 ;; Enrich isearch with Helm using the `C-S-s' binding.
 ;; swiper-helm behaves subtly different from isearch, so let's not

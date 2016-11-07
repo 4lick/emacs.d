@@ -6,6 +6,10 @@ elpa/
 projectile-bookmarks.eld
 projectile.cache
 recentf
+<<<<<<< HEAD
+ido.last
+=======
 .mc-lists.el
 ac-comphist.dat
 eshell/
+>>>>>>> af8b20002baea2caf71bc7bb4cd569552ac568ed
