@@ -79,5 +79,6 @@
   (setq nyan-bar-length 16
         nyan-wavy-trail t))
 
+(use-package transpose-frame)
 
 (provide '4lick-ui)
