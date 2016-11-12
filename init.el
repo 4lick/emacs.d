@@ -52,6 +52,9 @@
 ;; tools
 (load-file (concat dotfiles-dir "setup/4lick-tools.el"))
 
+;; monkeyc mode
+(load-file (concat dotfiles-dir "vendor/monkeyc-mode.el"))
+
 ;; divers
 ;; neotree
 (use-package neotree
