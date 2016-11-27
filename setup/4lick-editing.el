@@ -137,4 +137,7 @@
 (bind-key "<C-return>" 'newline)
 (bind-key "<pause>" 'kill-this-buffer)
 
+;; copy without selection
+(require 'copy-without-selection)
+
 (provide '4lick-editing)
