@@ -69,6 +69,7 @@
 
 ;; frame move
 (use-package framemove
+  :quelpa (framemove :fetcher github :repo "emacsmirror/framemove")  
   :config (progn
             (windmove-default-keybindings)
             (setq framemove-hook-into-windmove t))
@@ -89,5 +90,11 @@
   :commands neotree-toggle
   :bind ("<f8>" . neotree-toggle))
 
+;; go to scratch
+(defun 4lick/switch-to-scratch ()
+  (interactive)
+  (switch-to-buffer "*scratch*"))
+
+(bind-key "<f6>" '4lick/switch-to-scratch)
 
 (provide '4lick-navigation)

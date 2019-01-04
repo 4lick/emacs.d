@@ -9,7 +9,7 @@
 
 ;; Use M-x gist-buffer or M-x gist-region to create a gist
 ;; directly from the current buffer or selection.
-(use-package gist)
+;;(use-package gist)
 
 ;; Mark uncommitted changes in the fringe.
 (use-package git-gutter-fringe

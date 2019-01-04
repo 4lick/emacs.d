@@ -14,7 +14,7 @@
   ;; TODO: add `mc-hide-unmatched-lines-mode' back somewhere else?
   (bind-keys :map mc/keymap
              ("C-'" . nil))
-  :bind (("<insert>" . mc/mark-next-like-this)
+  :bind (("C-è" . mc/mark-next-like-this)
 	 ("S-<insert>" . mc/mark-previous-like-this)
 	 ("C-'" . mc/mark-more-like-this-extended)
 	 ("C-\"" . mc/mark-all-like-this-dwim)
@@ -124,10 +124,10 @@
   :bind (:map selected-keymap
               ("q" . selected-off)
               ("u" . upcase-region)
-              ("d" . downcase-region)
-              ("w" . count-words-region)
               ("C-n" . move-text-up)
-	      ("C-p" . move-text-down)	      	      
+	      ("C-p" . move-text-down)
+	      ("d" . downcase-region)
+              ("w" . count-words-region)              	      	      
               ("m" . apply-macro-to-region-lines)))
 
 ;; Allow pasting selection outside of Emacs
@@ -139,5 +139,31 @@
 
 ;; copy without selection
 (require 'copy-without-selection)
+(bind-key "<f5>" 'duplicate-start-of-line-or-region)
+(bind-key "<f9>" 'copy-line)
+
+;; very large file
+(use-package vlf
+  :ensure t
+  :config (progn
+            (require 'vlf-setup)))
+
+;;(global-set-key (kbd "<f2>") (quote copy-line)) ;;(bind-key "<f1>" 'kill-this-buffer)
+
+;; undo tree
+(use-package undo-tree
+  :init
+  (undo-tree-mode))
+
+(defun xah-new-empty-buffer ()
+  "Create a new empty buffer. New buffer will be named “untitled” or “untitled<2>”, “untitled<3>”, etc."
+  (interactive)
+  (let (($buf (generate-new-buffer "untitled")))
+    (switch-to-buffer $buf)
+    (funcall initial-major-mode)
+    (setq buffer-offer-save t)
+    $buf))
+
+(bind-key "C-<f9>" 'xah-new-empty-buffer)
 
 (provide '4lick-editing)

@@ -6,7 +6,7 @@
     :init (progn
           (projectile-global-mode)
           (setq projectile-enable-caching t)
-          (setq projectile-ignored-directories  '("Godeps" "_output"))
+          (setq projectile-ignored-directories  '("Godeps" "_output" "elpa" "node_modules"))
           (setq projectile-ignored-files '(".DS_Store" ".gitmodules" ".gitignore" "pkg")))
   :demand t
   :commands projectile-global-mode

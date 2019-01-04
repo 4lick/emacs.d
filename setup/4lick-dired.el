@@ -2,7 +2,14 @@
 
 ;; dired+ is an enhanced version of the built-in Emacs directory editor.
 ;; Learn about how it extends Dired: http://www.emacswiki.org/emacs/DiredPlus
+;;(use-package dired+
+;;  :init
+;;  (setq diredp-hide-details-initially-flag nil)
+;;  :config
+;;  (set-face-foreground 'diredp-file-name nil))
+
 (use-package dired+
+  :quelpa (dired+ :fetcher github :repo "emacsmirror/dired-plus")
   :init
   (setq diredp-hide-details-initially-flag nil)
   :config
