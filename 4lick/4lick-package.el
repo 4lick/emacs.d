@@ -1,5 +1,3 @@
-
-
 ;; `(online?)` is a function that tries to detect whether you are online.
 ;; We want to refresh our package list on Emacs start if we are.
 (require 'cl)
@@ -36,6 +34,16 @@
 
 (when (not (package-installed-p 'use-package))
   (package-install 'use-package))
+
+(when (not (package-installed-p 'quelpa))
+  (package-install 'quelpa))
+
+(quelpa
+ '(quelpa-use-package
+   :fetcher github
+   :repo "quelpa/quelpa-use-package"
+   :stable nil))
+(require 'quelpa-use-package)
 
 (require 'use-package)
 (setq use-package-always-ensure t)
