@@ -2,6 +2,6 @@
 -./bak
 -.bak
 -.auto-save-list
--./elpa
--elpa
+-/elpa
+-/quelpa
 -.eshell

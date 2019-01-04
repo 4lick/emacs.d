@@ -23,6 +23,8 @@
 (require '4lick-ui)
 (require '4lick-theme)
 
+(add-to-list 'load-path "~/.local/share/icons-in-terminal/")
+(add-to-list 'load-path "~/.emacs.d/sidebar")
 
 ;; customizations
 (load-file (concat dotfiles-dir "setup/4lick-editing.el"))
@@ -32,7 +34,7 @@
 (load-file (concat dotfiles-dir "setup/4lick-flycheck.el"))
 (load-file (concat dotfiles-dir "setup/4lick-complete.el"))
 (load-file (concat dotfiles-dir "setup/4lick-dired.el"))
-;;(load-file (concat dotfiles-dir "setup/4lick-git.el"))
+(load-file (concat dotfiles-dir "setup/4lick-git.el"))
 (load-file (concat dotfiles-dir "setup/4lick-snippets.el"))
 (load-file (concat dotfiles-dir "setup/4lick-markdown.el"))
 
@@ -40,20 +42,27 @@
 (load-file (concat dotfiles-dir "setup/4lick-format.el"))
 (load-file (concat dotfiles-dir "setup/4lick-elm.el"))
 (load-file (concat dotfiles-dir "setup/4lick-haskell.el"))
-(load-file (concat dotfiles-dir "setup/4lick-clojure-reload.el"))
-;;(load-file (concat dotfiles-dir "setup/4lick-clojure.el"))
+(load-file (concat dotfiles-dir "setup/4lick-clojure.el"))
+;;(load-file (concat dotfiles-dir "setup/4lick-clojure-monroe.el"))
 
 ;; web
 (load-file (concat dotfiles-dir "setup/4lick-emmet.el"))
 ;;(load-file (concat dotfiles-dir "setup/4lick-html.el"))
-;;(load-file (concat dotfiles-dir "setup/4lick-javascript.el"))
+(load-file (concat dotfiles-dir "setup/4lick-javascript.el"))
 ;;(load-file (concat dotfiles-dir "setup/4lick-js-web-mode.el"))
 
 ;; tools
 (load-file (concat dotfiles-dir "setup/4lick-tools.el"))
 
+;; productivity
+(load-file (concat dotfiles-dir "setup/4lick-org-mode.el"))
+
 ;; monkeyc mode
 (load-file (concat dotfiles-dir "vendor/monkeyc-mode.el"))
+
+;; ops
+(load-file (concat dotfiles-dir "setup/4lick-ops.el"))
+
 
 ;; divers
 ;; neotree
@@ -99,7 +108,9 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (paredit helm-swoop helm-ag iflipb flycheck-elm flycheck-elm-setup elm-mode f use-package paradox))))
+    (undo-tree terraform-mode magit js-format xref-js2 paredit helm-swoop helm-ag iflipb flycheck-elm flycheck-elm-setup elm-mode f use-package paradox)))
+ '(paradox-github-token t)
+ '(terraform-indent-level 4))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
