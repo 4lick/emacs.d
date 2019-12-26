@@ -16,3 +16,6 @@ ac-comphist.dat
 network-security.data
 recentf
 quelpa/
+transient/
+%backup%~
+auto-save-list/

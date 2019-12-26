@@ -14,9 +14,9 @@
 
 (setq org-agenda-files (quote ("~/org/todo")))
 
-(use-package org-pomodoro
-  :bind (("C-c C-^" . org-clock-in)
-	 ("C-c C-ù" . org-clock-out)))
+;;(use-package org-pomodoro
+;;  :bind (("C-c C-^" . org-clock-in)
+;;	 ("C-c C-ù" . org-clock-out)))
 
 (defun 4lick/hide-other ()
   (interactive)
@@ -54,9 +54,9 @@
               ("HOLD" :foreground "magenta" :weight bold)
               ("CANCELLED" :foreground "light green" :weight bold))))
 
-(setq org-use-fast-todo-selection t)
-
-(setq org-treat-S-cursor-todo-selection-as-state-change nil)
+;;(setq org-use-fast-todo-selection t)
+;;
+;;(setq org-treat-S-cursor-todo-selection-as-state-change nil)
 
 ;;(setq org-todo-state-tags-triggers
 ;;      (quote (("CANCELLED" ("CANCELLED" . t))
@@ -71,23 +71,23 @@
 (setq org-default-notes-file "~/org/refile.org")
 
 ;; Capture templates for: TODO tasks, Notes, ... and org-protocol
-(setq org-capture-templates
-      (quote (("t" "Todo" entry (file "~/org/refile.org")
-               "* TODO %?\n%U\n%a\n" :clock-in t :clock-resume t)
-              ("r" "Respond" entry (file "~/git/org/refile.org")
-               "* NEXT Respond to %:from on %:subject\nSCHEDULED: %t\n%U\n%a\n" :clock-in t :clock-resume t :immediate-finish t)
-              ("n" "Note" entry (file "~/org/refile.org")
-               "* %? :NOTE:\n%U\n%a\n" :clock-in t :clock-resume t)
-              ("j" "Journal" entry (file+datetree "~/org/diary.org")
-               "* %?\n%U\n" :clock-in t :clock-resume t)
-              ("w" "Org-protocol" entry (file "~/org/refile.org")
-               "* TODO Review %c\n%U\n" :immediate-finish t)
-              ;;("m" "Meeting" entry (file "~/org/refile.org")
-              ;; "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)
-              ;;("p" "Phone call" entry (file "~/org/refile.org")
-              ;; "* PHONE %? :PHONE:\n%U" :clock-in t :clock-resume t)
-              ("h" "Habit" entry (file "~/org/refile.org")
-               "* NEXT %?\n%U\n%a\nSCHEDULED: %(format-time-string \"<%Y-%m-%d %a .+1d/3d>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n"))))
+;;(setq org-capture-templates
+;;      (quote (("t" "Todo" entry (file "~/org/refile.org")
+;;               "* TODO %?\n%U\n%a\n" :clock-in t :clock-resume t)
+;;              ("r" "Respond" entry (file "~/git/org/refile.org")
+;;               "* NEXT Respond to %:from on %:subject\nSCHEDULED: %t\n%U\n%a\n" :clock-in t :clock-resume t :immediate-finish t)
+;;              ("n" "Note" entry (file "~/org/refile.org")
+;;               "* %? :NOTE:\n%U\n%a\n" :clock-in t :clock-resume t)
+;;              ("j" "Journal" entry (file+datetree "~/org/diary.org")
+;;               "* %?\n%U\n" :clock-in t :clock-resume t)
+;;              ("w" "Org-protocol" entry (file "~/org/refile.org")
+;;               "* TODO Review %c\n%U\n" :immediate-finish t)
+;;              ;;("m" "Meeting" entry (file "~/org/refile.org")
+;;              ;; "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)
+;;              ;;("p" "Phone call" entry (file "~/org/refile.org")
+;;              ;; "* PHONE %? :PHONE:\n%U" :clock-in t :clock-resume t)
+;;              ("h" "Habit" entry (file "~/org/refile.org")
+;;               "* NEXT %?\n%U\n%a\nSCHEDULED: %(format-time-string \"<%Y-%m-%d %a .+1d/3d>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n"))))
 
 (setq org-global-properties
               '(("Effort_ALL". "0 0:10 0:30 1:00 2:00 3:00 4:00")))

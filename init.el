@@ -108,7 +108,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (undo-tree terraform-mode magit js-format xref-js2 paredit helm-swoop helm-ag iflipb flycheck-elm flycheck-elm-setup elm-mode f use-package paradox)))
+    (helm-descbinds yafolding undo-tree terraform-mode magit js-format xref-js2 paredit helm-swoop helm-ag iflipb flycheck-elm flycheck-elm-setup elm-mode f use-package paradox)))
  '(paradox-github-token t)
  '(terraform-indent-level 4))
 (custom-set-faces
