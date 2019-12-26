@@ -69,7 +69,10 @@
          ;;("C-x r l" . helm-bookmarks)
          ;;("C-x c g" . helm-google-suggest)	 
          ;;("C-h a"   . helm-apropos)
-         ("C-x p" .   helm-top)))
+         ("C-x p" .   helm-top)
+	 :map helm-map
+	 ("<left>" . helm-find-files-up-one-level)	 	 
+	 ("<right>" . helm-execute-persistent-action)))
 
 ;; Enrich isearch with Helm using the `C-S-s' binding.
 ;; swiper-helm behaves subtly different from isearch, so let's not

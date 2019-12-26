@@ -1,4 +1,4 @@
-;; Make PgUp/Dn move the point.
+ ;; Make PgUp/Dn move the point.
 (setq scroll-error-top-bottom t)
 
 ;; Avy is a quick way to jump around your buffers.

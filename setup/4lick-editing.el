@@ -155,6 +155,9 @@
   :init
   (undo-tree-mode))
 
+(require 'undo-fu)
+(global-set-key (kbd "C-S-z") 'undo-fu-only-redo)
+
 (defun xah-new-empty-buffer ()
   "Create a new empty buffer. New buffer will be named “untitled” or “untitled<2>”, “untitled<3>”, etc."
   (interactive)
