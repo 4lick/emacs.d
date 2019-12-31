@@ -1,7 +1,9 @@
--.DS_Store
--./bak
--.bak
--.auto-save-list
--/elpa
--/quelpa
--.eshell
+- .DS_Store
+- ./bak
+- .bak
+- .auto-save-list
+- /elpa
+- /quelpa
+- elpa
+- quelpa
+- .eshell

@@ -44,6 +44,7 @@
 (load-file (concat dotfiles-dir "setup/4lick-haskell.el"))
 (load-file (concat dotfiles-dir "setup/4lick-clojure.el"))
 ;;(load-file (concat dotfiles-dir "setup/4lick-clojure-monroe.el"))
+(load-file (concat dotfiles-dir "setup/4lick-elips.el"))
 
 ;; web
 (load-file (concat dotfiles-dir "setup/4lick-emmet.el"))
